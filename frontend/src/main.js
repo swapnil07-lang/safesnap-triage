@@ -1,6 +1,7 @@
 import './style.css';
-
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
+// Resolve base API URL, normalizing trailing slashes and redundant /api prefixes
+const rawBaseUrl = import.meta.env.VITE_API_BASE_URL || (import.meta.env.PROD ? 'https://safesnap-backend.vercel.app' : '');
+const API_BASE_URL = rawBaseUrl.trim().replace(/\/+$/, '').replace(/\/api$/, '');
 
 const cameraInput = document.getElementById('camera-input');
 const quickTextBtns = document.querySelectorAll('.quick-text-btn');
