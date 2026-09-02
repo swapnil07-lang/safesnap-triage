@@ -80,10 +80,13 @@ def validate_image_bytes(data: bytes) -> bool:
     return False
 
 @app.get("/api/health")
+@app.get("/health")
+@app.get("/")
 async def health():
     return {"status": "ok"}
 
 @app.post("/api/analyze")
+@app.post("/analyze")
 async def analyze(
     image: UploadFile = File(None),
     text: str = Form(None)
