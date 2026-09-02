@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SafeSnap Triage</title>
+  </head>
+  <body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col font-sans antialiased selection:bg-yellow-200">
+    
+    <!-- Hero Header -->
+    <header class="bg-slate-950 text-white border-b border-slate-800 shadow-md">
+      <div class="max-w-2xl mx-auto px-4 py-5 text-center">
+        <div class="flex items-center justify-center space-x-2 mb-2">
+          <span class="text-2xl" aria-hidden="true">⚡</span>
+          <h1 class="text-3xl sm:text-4xl font-black tracking-tight text-white">SafeSnap Triage</h1>
+        </div>
+        <p class="text-slate-400 text-sm font-medium mb-3">Rapid Campus Emergency Hazard Identification & Action Guide</p>
+        
+        <!-- Medical Disclaimer Banner (WCAG AAA compliant high contrast) -->
+        <div class="inline-flex items-center space-x-2 bg-amber-400 text-slate-950 px-4 py-2 rounded-lg font-bold text-xs sm:text-sm uppercase tracking-wider border-2 border-slate-950 shadow-sm" role="note">
+          <span aria-hidden="true">⚠️</span>
+          <span>NOT MEDICAL ADVICE - For Campus Emergencies Only</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow p-4 sm:p-6 flex flex-col items-center max-w-2xl mx-auto w-full">
+      
+      <!-- Action Section -->
+      <section id="action-section" class="w-full mb-8">
+        <div class="text-center mb-6">
+          <h2 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">Report the Incident</h2>
+          <p class="text-slate-600 text-sm mt-1">Capture a photo of the hazard or select an immediate emergency condition below.</p>
+        </div>
+        
+        <!-- Primary Action: Native Camera Upload -->
+        <div class="mb-6">
+          <label 
+            for="camera-input"
+            class="group cursor-pointer relative flex flex-col items-center justify-center w-full p-6 sm:p-8 bg-slate-900 hover:bg-slate-800 active:bg-slate-950 text-white rounded-2xl border-4 border-slate-900 shadow-lg hover:shadow-xl transition-all duration-200 focus-within:ring-4 focus-within:ring-blue-500 focus-within:outline-none"
+            tabindex="0"
+            role="button"
+            aria-label="Take Photo or Upload Emergency Scene Image"
+          >
+            <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white/10 flex items-center justify-center mb-3 group-hover:scale-105 group-active:scale-95 transition-transform duration-200">
+              <span class="text-3xl sm:text-4xl" aria-hidden="true">📷</span>
+            </div>
+            <span class="text-xl sm:text-2xl font-black tracking-tight">Take Photo of Scene</span>
+            <span class="text-slate-400 text-xs sm:text-sm mt-1 font-medium">Automatic client-side 800px optimization</span>
+            <input type="file" id="camera-input" accept="image/*" capture="environment" class="sr-only" />
+          </label>
+        </div>
+
+        <!-- Secondary Grid: Quick Text Symptoms -->
+        <div class="relative">
+          <div class="flex items-center my-4">
+            <div class="flex-grow border-t border-slate-300"></div>
+            <span class="flex-shrink mx-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Or Select Quick Condition</span>
+            <div class="flex-grow border-t border-slate-300"></div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 sm:gap-4">
+            <button 
+              class="quick-text-btn group flex flex-col items-center justify-center p-4 sm:p-5 bg-white hover:bg-slate-100 active:bg-slate-200 text-slate-900 font-bold rounded-xl border-2 border-slate-300 hover:border-slate-900 shadow-sm hover:shadow active:scale-[0.98] transition-all duration-150 focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-500" 
+              data-text="Dizzy"
+              aria-label="Triage Dizzy condition"
+            >
+              <span class="text-2xl sm:text-3xl mb-1 group-hover:scale-110 transition-transform" aria-hidden="true">💫</span>
+              <span class="text-base sm:text-lg font-black tracking-tight">Dizzy</span>
+            </button>
+            <button 
+              class="quick-text-btn group flex flex-col items-center justify-center p-4 sm:p-5 bg-white hover:bg-slate-100 active:bg-slate-200 text-slate-900 font-bold rounded-xl border-2 border-slate-300 hover:border-slate-900 shadow-sm hover:shadow active:scale-[0.98] transition-all duration-150 focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-500" 
+              data-text="Bleeding"
+              aria-label="Triage Bleeding condition"
+            >
+              <span class="text-2xl sm:text-3xl mb-1 group-hover:scale-110 transition-transform" aria-hidden="true">🩸</span>
+              <span class="text-base sm:text-lg font-black tracking-tight">Bleeding</span>
+            </button>
+            <button 
+              class="quick-text-btn group flex flex-col items-center justify-center p-4 sm:p-5 bg-white hover:bg-slate-100 active:bg-slate-200 text-slate-900 font-bold rounded-xl border-2 border-slate-300 hover:border-slate-900 shadow-sm hover:shadow active:scale-[0.98] transition-all duration-150 focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-500" 
+              data-text="Breathing Issue"
+              aria-label="Triage Breathing Issue condition"
+            >
+              <span class="text-2xl sm:text-3xl mb-1 group-hover:scale-110 transition-transform" aria-hidden="true">🫁</span>
+              <span class="text-base sm:text-lg font-black tracking-tight">Breathing Issue</span>
+            </button>
+            <button 
+              class="quick-text-btn group flex flex-col items-center justify-center p-4 sm:p-5 bg-white hover:bg-slate-100 active:bg-slate-200 text-slate-900 font-bold rounded-xl border-2 border-slate-300 hover:border-slate-900 shadow-sm hover:shadow active:scale-[0.98] transition-all duration-150 focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-500" 
+              data-text="Allergic Reaction"
+              aria-label="Triage Allergic Reaction condition"
+            >
+              <span class="text-2xl sm:text-3xl mb-1 group-hover:scale-110 transition-transform" aria-hidden="true">⚠️</span>
+              <span class="text-base sm:text-lg font-black tracking-tight">Allergic Reaction</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Live Dynamic Region (Accessibility requirement) -->
+      <div id="live-region" aria-live="polite" class="w-full">
+        
+        <!-- Loading State Card -->
+        <div id="loading-state" class="hidden flex flex-col items-center justify-center p-8 sm:p-10 bg-white rounded-2xl border-2 border-slate-300 shadow-md w-full mb-8 text-center animate-pulse">
+          <div class="relative mb-4">
+            <div class="w-14 h-14 border-4 border-slate-200 border-t-slate-900 rounded-full animate-spin"></div>
+            <div class="absolute inset-0 flex items-center justify-center text-sm">⚡</div>
+          </div>
+          <p class="text-xl font-black text-slate-900">Analyzing Emergency Situation...</p>
+          <p class="text-slate-600 text-sm mt-1">Formulating immediate physical hazard triage steps</p>
+        </div>
+
+        <!-- Error State Card -->
+        <div id="error-state" class="hidden bg-red-50 border-2 border-red-500 rounded-2xl p-5 sm:p-6 w-full mb-8 shadow-md" role="alert">
+          <div class="flex items-start space-x-3">
+            <span class="text-2xl" aria-hidden="true">🚨</span>
+            <div class="flex-grow">
+              <h3 class="text-lg font-black text-red-900">Triage Service Notice</h3>
+              <p id="error-message" class="text-sm font-semibold text-red-800 mt-1"></p>
+              <p class="text-xs text-red-700 mt-2">If this is a life-threatening emergency, please use the SOS button below or dial 911 immediately.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Results Card -->
+        <div id="results-card" class="hidden bg-white border-2 border-slate-900 rounded-2xl p-6 sm:p-7 shadow-xl w-full mb-8 transition-all">
+          
+          <!-- Assessment Header -->
+          <div class="flex items-center justify-between pb-4 mb-5 border-b border-slate-200">
+            <div class="flex items-center space-x-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block animate-ping"></span>
+              <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Triage Assessment</span>
+            </div>
+            <span id="result-severity" class="inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm font-black uppercase tracking-wider">
+              <!-- Populated via JS -->
+            </span>
+          </div>
+
+          <!-- Hazard Title Box -->
+          <div class="mb-5 bg-slate-50 p-4 rounded-xl border border-slate-200">
+            <h3 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Identified Hazard</h3>
+            <p id="result-hazard" class="text-xl sm:text-2xl font-black text-slate-950 leading-tight"></p>
+          </div>
+
+          <!-- 3 Immediate Steps Section -->
+          <div class="mb-6">
+            <h3 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">Immediate Triage Actions</h3>
+            <div id="result-steps" class="space-y-3">
+              <!-- Populated dynamically via JS with numbered cards -->
+            </div>
+          </div>
+
+          <!-- TTS Readout Button -->
+          <button 
+            id="tts-btn" 
+            class="w-full flex items-center justify-center space-x-2 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold py-3.5 px-6 rounded-xl shadow-md hover:shadow-lg active:scale-[0.99] transition-all focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-400"
+            aria-label="Listen to triage steps readout"
+          >
+            <span class="text-xl" aria-hidden="true">🔊</span>
+            <span class="text-base font-black">Listen to Steps</span>
+          </button>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Persistent SOS Footer -->
+    <footer class="bg-slate-950 border-t-2 border-red-600 p-3 sm:p-4 sticky bottom-0 z-50 shadow-2xl backdrop-blur-md">
+      <div class="max-w-2xl mx-auto">
+        <a 
+          id="sos-btn" 
+          href="sms:?body=EMERGENCY!%20I%20need%20immediate%20help." 
+          class="sos-pulse flex items-center justify-center space-x-2 w-full text-center bg-red-600 hover:bg-red-700 active:bg-red-800 text-white font-black text-xl sm:text-2xl py-3.5 sm:py-4 px-6 rounded-xl border-2 border-white shadow-lg active:scale-[0.99] transition-all focus:outline-none focus-visible:ring-4 focus-visible:ring-red-400"
+          role="button"
+          aria-label="Send Emergency SMS with Location"
+        >
+          <span class="text-2xl animate-bounce" aria-hidden="true">🚨</span>
+          <span>SOS EMERGENCY — Send Location</span>
+        </a>
+      </div>
+    </footer>
+
+    <!-- Hidden canvas for image compression -->
+    <canvas id="compression-canvas" class="hidden"></canvas>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
